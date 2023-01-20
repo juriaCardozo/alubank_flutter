@@ -1,5 +1,7 @@
 import 'package:alubank_flutter/components/box_card.dart';
 import 'package:alubank_flutter/components/color_dor.dart';
+import 'package:alubank_flutter/components/sections/account_actions.dart';
+import 'package:alubank_flutter/components/sections/recent_activity.dart';
 import 'package:alubank_flutter/themes/theme_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +16,8 @@ class Home extends StatelessWidget {
       body: Column(
         children: [
           Header(),
-          BoxCard(
-            boxContent: ColorDot(
-              color: ThemeColors.recentActivity['spent'],
-            ),
-          ),
+          RecentActivity(),
+          AccountActions(),
         ],
       ),
     );
