@@ -20,18 +20,27 @@ class AccountActions extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              BoxCard(
-                boxContent: _AccountActionsContent(
-                    icon: Icon(Icons.account_balance_wallet), text: 'Depositar'),
+            children: [
+              InkWell(
+                onTap: (){},
+                child: BoxCard(
+                  boxContent: _AccountActionsContent(
+                      icon: Icon(Icons.account_balance_wallet), text: 'Depositar'),
+                ),
               ),
-              BoxCard(
-                boxContent: _AccountActionsContent(
-                    icon: Icon(Icons.cached), text: 'Transferir'),
+              InkWell(
+                onTap: (){},
+                child: BoxCard(
+                  boxContent: _AccountActionsContent(
+                      icon: Icon(Icons.cached), text: 'Transferir'),
+                ),
               ),
-              BoxCard(
-                boxContent: _AccountActionsContent(
-                    icon: Icon(Icons.center_focus_strong), text: 'Ler'),
+              InkWell(
+                onTap: (){},
+                child: BoxCard(
+                  boxContent: _AccountActionsContent(
+                      icon: Icon(Icons.center_focus_strong), text: 'Ler'),
+                ),
               ),
             ],
           ),
@@ -51,14 +60,18 @@ class _AccountActionsContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
-          child: icon,
-        ),
-        Text(text),
-      ],
+    return Ink(
+      width: 72.0,
+      child: Column(
+        children: [
+          ElevatedButton(onPressed: (){}, child: Text(''),),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: icon,
+          ),
+          Text(text),
+        ],
+      ),
     );
   }
 }
